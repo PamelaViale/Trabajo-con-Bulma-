@@ -1,29 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <title>Formulario de Registro con Bulma</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clima en Buenos Aires</title>
+  <!-- Bulma CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/a2e0e6ad5d.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar is-primary" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <figure>
+          <img class="image is-64x64" src="img/clima.png.png" alt="gatito-clima"></figure>
+        
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">Inicio</a>
+        <a class="navbar-item">Pronóstico</a>
+        <a class="navbar-item">Contacto</a>
+      </div>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="buttons">
+            <a class="button is-light">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="section has-background-light">
+    <div class="container has-text-centered">
+      <h1 class="title">Clima en Buenos Aires</h1>
+      <h2 class="subtitle">¡¡Conoce el pronóstico actualizado y aprende sobre el tiempo en tu ciudad!!</h2>
+    </div>
+  </section>
+
+  <!-- GRID con imágenes y texto -->
+  <section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="img/sol.jpg" alt="Soleado">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Días soleados</p>
+              <p>Los días soleados en BA son los más lindos !</p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-full-mobile is-half-tablet is-one-third-desktop is-offset-desktop-1">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="img/lluvia.jpg" alt="Lluvioso">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Lluvias</p>
+              <p>Solemos tener lluvias en verano y primavera</p>
+            </div>
+          </div>
+        </div>
+        <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <img src="img/invierno.jpg" alt="Invierno">
+              </figure>
+            </div>
+            <div class="card-content">
+              <p class="title is-5">Invierno</p>
+              <p>Los inviernos porteños son muy ventosos en nuestra ciudad</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
     
 
+  <!-- FORMULARIO -->
+  <section class="section has-background-light">
+    <div class="container" style="max-width: 600px;">
+      <div class="box">
+        <h2 class="title is-4 has-text-centered">Registro</h2>
+        <form id="registerForm" method="POST">
+          <div class="field">
+            <label class="label" for="name">Nombre completo</label>
+            <div class="control has-icons-left">
+              <input class="input" type="text" id="name" placeholder="Escribe tu nombre" required>
+              <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
+            </div>
+          </div>
 
-<p>holaaaa</p>
+          <div class="field">
+            <label class="label" for="email">Correo electrónico</label>
+            <div class="control has-icons-left">
+              <input class="input" type="email" id="email" placeholder="Ej: usuario@mail.com" required>
+              <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
+            </div>
+            <p id="emailHelp" class="help"></p>
+          </div>
 
+          <div class="field">
+            <label class="label" for="password">Contraseña</label>
+            <div class="control has-icons-left">
+              <input class="input" type="password" id="password" required>
+              <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+            </div>
+          </div>
 
+          <div class="field">
+            <label class="label" for="confirmPassword">Confirmar contraseña</label>
+            <div class="control has-icons-left">
+              <input class="input" type="password" id="confirmPassword" required>
+              <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
+            </div>
+          </div>
 
+          <div class="field">
+            <label class="label">Sobre mí</label>
+            <textarea class="textarea" placeholder="Escribe algo sobre ti..."></textarea>
+          </div>
 
+          <div class="field has-text-centered">
+            <button type="submit" class="button is-primary ">
+              <span class="icon"><i class="fas fa-paper-plane"></i></span>
+              <span class="content has-text-centered">Enviar</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
 
-
-
-
-
-
-
-
-
-    <script src="index.html"></script>
-</body>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>Clima Buenos Aires</strong> 
+      </p>
+    </div>
+  </footer>
+  <script src="app.js"></script>
+  </body>
 </html>
