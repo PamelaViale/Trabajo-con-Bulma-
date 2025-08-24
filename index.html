@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clima en Buenos Aires</title>
-  <!-- Bulma CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-  <!-- Font Awesome -->
-  <script src="https://kit.fontawesome.com/a2e0e6ad5d.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/a2e0e6ad5d.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -19,34 +17,34 @@
           <img class="image is-64x64" src="img/clima.png.png" alt="gatito-clima"></figure>
         
       </a>
-      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+      <!-- Botón hamburguesa -->
+      <a role="button"
+        class="navbar-burger"
+        aria-label="menu"
+        aria-expanded="false"
+        data-target="navbarBasicExample"
+      >
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
         <span aria-hidden="true"></span>
       </a>
     </div>
 
-    <div id="navbarMenu" class="navbar-menu">
+    <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
-        <a class="navbar-item">Inicio</a>
-        <a class="navbar-item">Pronóstico</a>
-        <a class="navbar-item">Contacto</a>
-      </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="buttons">
-            <a class="button is-light">Login</a>
-          </div>
-        </div>
+        <a class="navbar-item" href="#">Inicio</a>
+        <a class="navbar-item" href="#pronostico">Pronóstico</a>
+        <a class="navbar-item" href="#contacto">Contacto</a>
       </div>
     </div>
   </nav>
 
-  <!-- HEADER -->
-  <section class="section has-background-light">
-    <div class="container has-text-centered">
-      <h1 class="title">Clima en Buenos Aires</h1>
-      <h2 class="subtitle">¡¡Conoce el pronóstico actualizado y aprende sobre el tiempo en tu ciudad!!</h2>
+
+<!-- HEADER -->
+  <section class="hero is-info is-medium">
+    <div class="hero-body has-text-centered">
+      <p class="title">Clima en Buenos Aires</p>
+      <p class="subtitle">Información actualizada y pronóstico</p>
     </div>
   </section>
 
@@ -61,7 +59,7 @@
                 <img src="img/sol.jpg" alt="Soleado">
               </figure>
             </div>
-            <div class="card-content">
+            <div class="card-content box has-background-light">
               <p class="title is-5">Días soleados</p>
               <p>Los días soleados en BA son los más lindos !</p>
             </div>
@@ -74,7 +72,7 @@
                 <img src="img/lluvia.jpg" alt="Lluvioso">
               </figure>
             </div>
-            <div class="card-content">
+            <div class="card-content box has-background-light">
               <p class="title is-5">Lluvias</p>
               <p>Solemos tener lluvias en verano y primavera</p>
             </div>
@@ -87,10 +85,21 @@
                 <img src="img/invierno.jpg" alt="Invierno">
               </figure>
             </div>
-            <div class="card-content">
+            <div class="card-content box has-background-light">
               <p class="title is-5">Invierno</p>
-              <p>Los inviernos porteños son muy ventosos en nuestra ciudad</p>
-            </div>
+              <p>Los inviernos porteños son muy ventosos</p>
+           
+            <div class="columns mt-3">
+  <div class="column has-background-light box">
+    <p class="subtitle is-6">Temperaturas bajas</p>
+    <p>En promedio entre 5° y 10° en julio.</p>
+  </div>
+  <div class="column has-background-light box">
+    <p class="subtitle is-6">Viento</p>
+    <p>El viento sur suele ser muy frío en invierno.</p>
+     </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
@@ -98,59 +107,68 @@
     
 
   <!-- FORMULARIO -->
-  <section class="section has-background-light">
-    <div class="container" style="max-width: 600px;">
-      <div class="box">
-        <h2 class="title is-4 has-text-centered">Registro</h2>
-        <form id="registerForm" method="POST">
-          <div class="field">
-            <label class="label" for="name">Nombre completo</label>
-            <div class="control has-icons-left">
-              <input class="input" type="text" id="name" placeholder="Escribe tu nombre" required>
-              <span class="icon is-small is-left"><i class="fas fa-user"></i></span>
-            </div>
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 class="title has-text-centered">Contacto</h2>
+      <form id="contactForm" class="box">
+        <!-- Nombre -->
+        <div class="field">
+          <label class="label">Nombre</label>
+          <div class="control has-icons-left">
+            <input
+              id="name"
+              class="input"
+              type="text"
+              placeholder="Ingresa tu nombre"
+              required
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-user"></i>
+            </span>
           </div>
+          <p id="nameHelp" class="help"></p>
+        </div>
 
-          <div class="field">
-            <label class="label" for="email">Correo electrónico</label>
-            <div class="control has-icons-left">
-              <input class="input" type="email" id="email" placeholder="Ej: usuario@mail.com" required>
-              <span class="icon is-small is-left"><i class="fas fa-envelope"></i></span>
-            </div>
-            <p id="emailHelp" class="help"></p>
+        <!-- Email -->
+        <div class="field">
+          <label class="label">Correo electrónico</label>
+          <div class="control has-icons-left">
+            <input
+              id="email"
+              class="input"
+              type="email"
+              placeholder="ejemplo@mail.com"
+              required
+            />
+            <span class="icon is-small is-left">
+              <i class="fas fa-envelope"></i>
+            </span>
           </div>
+          <p id="emailHelp" class="help"></p>
+        </div>
 
-          <div class="field">
-            <label class="label" for="password">Contraseña</label>
-            <div class="control has-icons-left">
-              <input class="input" type="password" id="password" required>
-              <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
-            </div>
+        <!-- Mensaje -->
+        <div class="field">
+          <label class="label">Mensaje</label>
+          <div class="control">
+            <textarea
+              id="message"
+              class="textarea"
+              placeholder="Escribe tu mensaje"
+            ></textarea>
           </div>
+        </div>
 
-          <div class="field">
-            <label class="label" for="confirmPassword">Confirmar contraseña</label>
-            <div class="control has-icons-left">
-              <input class="input" type="password" id="confirmPassword" required>
-              <span class="icon is-small is-left"><i class="fas fa-lock"></i></span>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="label">Sobre mí</label>
-            <textarea class="textarea" placeholder="Escribe algo sobre ti..."></textarea>
-          </div>
-
-          <div class="field has-text-centered">
-            <button type="submit" class="button is-primary ">
-              <span class="icon"><i class="fas fa-paper-plane"></i></span>
-              <span class="content has-text-centered">Enviar</span>
-            </button>
-          </div>
-        </form>
-      </div>
+        <!-- Botón -->
+        <div class="field has-text-centered">
+          <button class="button is-primary" type="submit">
+            Enviar
+          </button>
+        </div>
+      </form>
     </div>
   </section>
+
 
   <!-- FOOTER -->
   <footer class="footer">
